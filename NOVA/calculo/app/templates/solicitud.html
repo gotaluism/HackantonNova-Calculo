@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Calculo</title>
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00000;">
+
+    
+    <div class="container">
+
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"
+    id="navbarNavAltMarkup">
+    <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="{% url 'home' %}" id="navs">Formulario</a>
+        <a class="nav-link" href="" id="navs">Estado Solicitud</a>
+        <a class="nav-link" href="{% url 'solicitud' %}" id="navs">Administradores</a>
+
+    </div>
+    {% comment %} iniciar seccion crear cuenta {% endcomment %}
+</div>
+</div>
+</nav>
+</head>
+
+
+
+
+
+
+<ul class="list-group">
+<ceneter><h1>Registro Solicitudes Profesor</h1><center>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+            <tr>
+                <th>ID Epik</th>
+                <th>Nombre </th>
+                <th>Correo</th>
+                <th>Curso</th>
+                <th>Asistiencia Monitoría</th>
+                <th>Asistiencia Taller</th>
+                <th>Aceptar Solicitud</th>
+                <th>Rechazar Solicitud</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for solicitud in solicitudes %}
+        {% if solicitud.valMonitoria == False or solicitud.valTaller == False%}
+        {% else %}
+        
+            <tr>
+                <td>{{ solicitud.idEpik }}</td>
+                <td>{{ solicitud.nombre }}</td>
+                <td>{{ solicitud.mail }}</td>
+                <td>{{ solicitud.curso }}</td>
+                <td>{{ solicitud.valMonitoria }}</td>
+                <td>{{ solicitud.valTaller }}</td>
+                <td><a class="nav-link" href="{% url 'eliminarSolicitud' solicitud.idEpik %}" id="navs">✔️</a></td>
+                <td><a class="nav-link" href="{% url 'aceptarSolicitud' solicitud.idEpik %}" id="navs">✖️</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+</body>
+<footer id="foot">
+    <br>
+    <h4>RE-MADE</h4>
+        <p>Copyright &copy;2023 <a href=”#”>Codemasters team</a>  </p>
+        
+</footer>
