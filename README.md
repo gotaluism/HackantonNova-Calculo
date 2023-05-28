@@ -6,6 +6,11 @@
 
  Re-Made es un sistema eficiente y facil de usar, el cual pretende optimizar los procesos de tanto estudiante como profesor a la hora de
  pedir un supletorio de parcial de Calculo. Esto no es solo un software, es la automatización del futuro EAFIT, el camino a la excelencia.
+
+<h3>Tecnologias usadas y como correr el programa</h3>
+-Framework Django<br>
+-pip install django <br>
+-python manage.py runserver<br>
  
  ![foto1-reMade](https://github.com/gotaluism/HackantonNova-Calculo/assets/76192117/f2076025-9147-499f-9c99-b4031f8254fd)
 
