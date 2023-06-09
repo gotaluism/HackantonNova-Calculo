@@ -1,5 +1,7 @@
  # Hackanton Nova Calculo
  ## Re-Made ##
+ [![](https://visitcount.itsvg.in/api?id=gotaluism&label=Visits&icon=4&pretty=false)](https://visitcount.itsvg.in)
+ 
  ![remade](https://github.com/gotaluism/HackantonNova-Calculo/assets/76192117/66aee991-f09b-47b1-9878-eea2b6d9f6f9)
 
 <h3>Gestión solicitud supletorios clases de Calculo</h3>
